@@ -1,0 +1,17 @@
+ALGORITHM tri
+VAR
+    i,j,elem:INTEGER;
+    tab : ARRAY_OF INTEGER[];
+BEGIN
+    Read(tab);
+    FOR i FROM 1 TO tab.length-1  DO
+        elem := tab[i];
+        j := i-1;
+        WHILE (j >= 0 && tab[j] > elem) DO
+            tab[j+1] := tab[j];
+            j = j -1;
+        END_WHILE
+        tab[j+1] := elem;
+    END_FOR
+    Write(tab);
+END
